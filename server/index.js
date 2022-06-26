@@ -113,12 +113,12 @@ const httpServer = createServer((req, res) => {
     res.writeHead(200, {
       "Content-Type": "image/png",
     });
-    readdir("carrots", function (err, files) {
+    readdir(__dirname + "/carrots", function (err, files) {
       //handling error
       if (err) {
           return console.log('Unable to scan directory: ' + err);
       } 
-      res.end(readFileSync("carrots/" + files[Math.floor(Math.random() * files.length)]));
+      res.end(readFileSync(__dirname + "/carrots/" + files[Math.floor(Math.random() * files.length)]));
   });
   } else {
     res.writeHead(200, {
@@ -126,7 +126,7 @@ const httpServer = createServer((req, res) => {
     });
     // reload the file every time
     const content = "<h3 style=\"color: green;\">server thing is operational</h3>" +
-      readFileSync("index.html");
+      readFileSync(__dirname + "/index.html");
     const length = Buffer.byteLength(content);
     res.end(content);
   }
