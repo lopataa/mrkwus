@@ -15,6 +15,8 @@
     "express-ws": "^5.0.2",
     "mathjs": "^10.6.1",
     "socket.io": "^4.5.1",
+    "world": "^0.0.1",
+    "world.js": "^0.0.1",
     "ws": "^8.8.0"
   },
   "optionalDependencies": {
